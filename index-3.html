@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FF Beta Verify</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;font-family:Arial,sans-serif}
+body{min-height:100vh;background:radial-gradient(circle at top,#202020 0%,#0b0b0b 45%,#050505 100%);color:white}
+.nav{height:65px;display:flex;align-items:center;justify-content:space-between;padding:0 22px;border-bottom:1px solid #292929;background:rgba(5,5,5,.85)}
+.logo{font-size:20px;font-weight:800;letter-spacing:1px}.logo span{color:#ffb000}
+.menu{color:#aaa;font-size:14px}
+.hero{max-width:500px;margin:70px auto;padding:20px}
+.card{background:rgba(18,18,18,.96);border:1px solid #292929;border-radius:18px;padding:30px 24px;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.badge{display:inline-block;padding:7px 12px;border-radius:20px;background:#211a0b;color:#ffb000;font-size:12px;margin-bottom:15px}
+h1{font-size:29px;margin-bottom:10px}.subtitle{color:#999;font-size:14px;line-height:1.6;margin-bottom:28px}
+label{display:block;color:#bbb;font-size:13px;margin-bottom:8px}
+input{width:100%;padding:14px;border-radius:10px;border:1px solid #333;outline:none;background:#0b0b0b;color:white;font-size:15px}
+input:focus{border-color:#ffb000}
+button{width:100%;margin-top:16px;padding:14px;border:0;border-radius:10px;background:#ffb000;color:#111;font-size:15px;font-weight:800;cursor:pointer}
+.status{display:none;margin-top:20px;padding:15px;border-radius:10px;background:#101010;border:1px solid #292929;color:#bbb;font-size:13px}
+.status strong{color:#35d07f}.discord{margin-top:20px;text-align:center;color:#888;font-size:13px}
+.footer{text-align:center;color:#666;font-size:12px;margin-top:25px}
+</style>
+</head>
+<body>
+<nav class="nav">
+<div class="logo">_.<span>Not</span>.Sufiyan._</div>
+<div class="menu">FF BETA • VERIFY</div>
+</nav>
+<main class="hero">
+<div class="card">
+<div class="badge">● SYSTEM ONLINE</div>
+<h1>FF Beta Verification</h1>
+<p class="subtitle">Verify your Free Fire Player ID using this demo verification system. No password or access token is required.</p>
+<label for="uid">Free Fire Player ID</label>
+<input id="uid" type="text" inputmode="numeric" placeholder="Enter Player ID">
+<button onclick="verifyID()">VERIFY ID</button>
+<div class="status" id="status"></div>
+<div class="discord">Community • Updates • Support</div>
+</div>
+<div class="footer">© 2026 _.Not.Sufiyan._ • Demo Verification Portal</div>
+</main>
+<script>
+function verifyID(){
+const uid=document.getElementById("uid").value.trim();
+const status=document.getElementById("status");
+if(!uid){status.style.display="block";status.innerHTML="⚠️ Please enter a Player ID.";return;}
+status.style.display="block";
+status.innerHTML="⏳ Checking Player ID...";
+setTimeout(()=>{status.innerHTML="✓ <strong>Verification request created.</strong><br><br>Player ID: "+uid+"<br>Status: Demo verification only.";},1500);
+}
+</script>
+</body>
+</html>
